@@ -1,4 +1,4 @@
-package br.edu.infnet.atmbancomoney.visao;
+package br.edu.infnet.atmbancomoney.view;
 
 public interface Tela {
 	

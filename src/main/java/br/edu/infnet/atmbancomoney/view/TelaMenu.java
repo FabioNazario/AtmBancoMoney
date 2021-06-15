@@ -1,4 +1,4 @@
-package br.edu.infnet.atmbancomoney.visao;
+package br.edu.infnet.atmbancomoney.view;
 
 import java.util.Scanner;
 
@@ -18,10 +18,9 @@ public class TelaMenu implements Tela {
                 System.out.println("1 - Saldo");
                 System.out.println("2 - Saque");
                 System.out.println("3 - Deposito");
-                System.out.println("4 - Extrato");
-                System.out.println("5 - Sair");
+                System.out.println("4 - Sair");
 
-                System.out.println(" Entre com a opcao: ");
+                System.out.println("\nEscolha a opção: ");
                 opcao = scanner.nextInt();
                 
                homeCtrl.abrir(opcao);

@@ -17,11 +17,22 @@ public class TelaUtil{
     
     public static void exibirAperteEnterParaContinuar() {
         
-        System.out.println("\n\n Pressione ENTER para continuar...");
+        System.out.println("\nPressione ENTER para continuar...");
          
         Scanner s = new Scanner(System.in);
         s.nextLine();
         limparTela();
+    }
+    
+    public static void exibirAperteEnterParaContinuar(String Mensagem, Boolean limpaTela) {
+        
+        System.out.println("\n" + Mensagem);
+         
+        Scanner s = new Scanner(System.in);
+        s.nextLine();
+        
+        if(limpaTela)
+            limparTela();
     }
     
     public static String montarTituloTela(String titulo){
@@ -30,7 +41,7 @@ public class TelaUtil{
         
         titulo = "+---------------" +  aux   + "---------------+\n"
                 +"|               " + titulo + "               |\n" 
-                +"+---------------" +  aux   + "---------------+\n\n";
+                +"+---------------" +  aux   + "---------------+\n";
         
         return titulo;
     }

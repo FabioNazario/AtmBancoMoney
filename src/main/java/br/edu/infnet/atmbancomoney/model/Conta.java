@@ -11,8 +11,6 @@ public class Conta {
 	
 	private double saldo;
 	
-	private List<Transacao> transacoes = new ArrayList<Transacao>();
-	
 	public Conta(String numero, String pin) {
 		this.numero = numero;
 		this.pin = pin;
@@ -34,25 +32,9 @@ public class Conta {
 		this.saldo -= valorSaque;
 	}
 
-	public List<Transacao> getTransacoes() {
-		return transacoes;
-	}
-
-	public void setTransacoes(List<Transacao> transacoes) {
-		this.transacoes = transacoes;
-	}
-
-	public void addTransacao(Transacao transacao) {
-		if(getTransacoes() == null) {
-			this.transacoes = new ArrayList<Transacao>();
-		}
-		getTransacoes().add(transacao);
-	}
-
-	@Override
-	public String toString() {
-		return "Conta [numero=" + numero + ", pin=" + pin + ", saldo=" + saldo + ", transacoes=" + transacoes + "]";
-	}
-	
+        @Override
+        public String toString() {
+            return "Conta{" + "numero=" + numero + ", pin=" + pin + ", saldo=" + saldo + '}';
+        }
 
 }

@@ -2,7 +2,7 @@ package br.edu.infnet.atmbancomoney.control;
 
 import br.edu.infnet.atmbancomoney.model.Conta;
 import br.edu.infnet.atmbancomoney.util.LoginOuSenhaInvalidoException;
-import br.edu.infnet.atmbancomoney.visao.TelaMenu;
+import br.edu.infnet.atmbancomoney.view.TelaMenu;
 
 public class LoginCtrl {
 

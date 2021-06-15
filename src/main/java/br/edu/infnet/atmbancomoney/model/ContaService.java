@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import br.edu.infnet.atmbancomoney.util.SaldoInsuficienteException;
+import br.edu.infnet.atmbancomoney.util.StringUtil;
 
 public class ContaService {
  
@@ -39,10 +40,6 @@ public class ContaService {
 		}
 
 		conta.depositar(valor);
-		
-		Transacao transacao = new Transacao(TipoTransacao.CREDITO, valor, conta);
-		conta.addTransacao(transacao);
-
 	}
 
 	public String sacar(double valorSaque, String contaNumero) throws SaldoInsuficienteException {
@@ -62,25 +59,11 @@ public class ContaService {
 
 		if (conta.getSaldo() >= valorSaque) {
 			conta.sacar(valorSaque);
-
-			Transacao transacao = new Transacao(TipoTransacao.DEBITO, valorSaque, conta);
-			conta.addTransacao(transacao);
-			
-			return "SAQUE REALIZADO COM SUCESSO!";
+			return "Saque realizado com sucesso!\n"
+                                + "Seu novo saldo é de R$" + StringUtil.doubleToString(conta.getSaldo());
 		}
 		
 		throw new SaldoInsuficienteException();
-	}
-
-	public List<Transacao> getExtratoConta(String contaNumero) {
-		List<Conta> collect = REPOSITORIO.stream().filter(c -> c.getNumero().equals(contaNumero))
-				.collect(Collectors.toList());
-
-		if (collect.size() == 0) {
-			return null;
-		}
-
-		return collect.get(0).getTransacoes();
 	}
 
 }

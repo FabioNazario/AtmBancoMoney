@@ -1,4 +1,4 @@
-package br.edu.infnet.atmbancomoney.visao;
+package br.edu.infnet.atmbancomoney.view;
 
 import java.util.Scanner;
 
@@ -17,15 +17,15 @@ public class TelaLogin implements Tela {
 		Scanner scan = new Scanner(System.in);
 		System.out.println( TelaUtil.montarTituloTela("BEM-VINDO AO BANCO MONEY!") );
 		
-		System.out.println("Informe o numero da conta: ");
+		System.out.println("Número da conta: ");
 		conta = scan.next();
-		System.out.println("Informa o pin: ");
+		System.out.println("Pin: ");
 		pin = scan.next();
 
 		try {
 			loginCtrl.login(conta, pin);
 		} catch (LoginOuSenhaInvalidoException e) {
-			System.out.println("Erro: " + e.getMessage());
+			System.out.println(e.getMessage());
                         TelaUtil.exibirAperteEnterParaContinuar();
 			apresentar();
 		}

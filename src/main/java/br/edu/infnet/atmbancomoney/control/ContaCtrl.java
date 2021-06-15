@@ -3,7 +3,6 @@ package br.edu.infnet.atmbancomoney.control;
 import java.util.List;
 
 import br.edu.infnet.atmbancomoney.model.ContaService;
-import br.edu.infnet.atmbancomoney.model.Transacao;
 import br.edu.infnet.atmbancomoney.util.SaldoInsuficienteException;
 
 public class ContaCtrl {
@@ -28,12 +27,4 @@ public class ContaCtrl {
 			return e.getMessage();
 		}
 	}
-
-	public List<Transacao> getExtrato() {
-		String contaNumero = LoginCtrl.conta.getNumero();
-		return contaService.getExtratoConta(contaNumero);
-	}
-	
-	
-
 }
